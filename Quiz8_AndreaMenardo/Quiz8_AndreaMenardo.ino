@@ -2,6 +2,8 @@
 #include <Servo.h>
 Servo MOTOR; 
 
+//master file prepared by Andrea, to be modified by Abdulshafi and Sofia
+
 //list all constants
 const int POT1 = A1; //potentiometer 0 controls rotation
 const int POT0 = A0; //potentiometer 1 controls speed
@@ -32,7 +34,7 @@ void loop()
    Serial.print("POT1 Value: ");
    Serial.print(POT1Value);
 
-   deltaAngle = map(POT1Value, 0, 1023, 0, 180);
+   deltaAngle = map(POT1Value, 0, 1023, 1, 179);
    Serial.print(" - Delta Angle: ");
    Serial.print(deltaAngle);
    Serial.print("° Degrees");
@@ -41,7 +43,7 @@ void loop()
    Serial.print(" - POT0 Value: ");
    Serial.print(POT0Value);
 
-   velocity = map(POT0Value, 0, 1023, 1500, 500);
+   velocity = map(POT0Value, 0, 1023, 1600, 400);
    Serial.print(" - Velocity: ");
    Serial.print(velocity);
    Serial.print("ms");
